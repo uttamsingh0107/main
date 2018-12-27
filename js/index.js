@@ -21,8 +21,8 @@ tl.add([
 ]);
 
 //Bulb
-for (var i=0;i<9;i++){
-	var bulb= document.createElement("div");
-	bulb.className="bulb";
-	document.getElementById("reg-desk-lights").appendChild(bulb);
-}
+// for (var i=0;i<9;i++){
+// 	var bulb= document.createElement("div");
+// 	bulb.className="bulb";
+// 	document.getElementById("reg-desk-lights").appendChild(bulb);
+// }
