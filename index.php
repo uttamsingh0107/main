@@ -44,11 +44,19 @@
         .font-small {
             font-size: 0.9rem;
         }
+
+    iframe:hover{
+      transform: scale(1.1);
+    }
     </style>
 	<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
 </head>
 
 <body class="event-lp">
+	<div class="spinner">
+  <div class="dot1"></div>
+  <div class="dot2"></div>
+</div>
   	<!-- Navigation & Intro -->
   	<header>
     	<!-- Navbar -->
@@ -62,7 +70,7 @@
 				<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           			<ul class="navbar-nav ml-auto smooth-scroll">
             			<li class="nav-item">
-              				<a class="nav-link" href="#home">Campus Ambassador Registration</a>
+              				<a class="nav-link" href="registeration.php">Campus Ambassador Registration</a>
             			</li>
           			</ul>
         		</div>
@@ -313,7 +321,7 @@
             			<div class="col-lg-4 col-md-4">
               				<hr class="white mx-5">
               				<h1 class="display-4 font-weight-bold white-text">
-                				<strong>49</strong>
+                				<strong  id="days"></strong>
               				</h1>
               				
 							<hr class="white mx-5">
@@ -325,7 +333,7 @@
             			<!--Grid column-->
             			<div class="col-lg-4 col-md-4">
               				<h1 class="display-4 font-weight-bold white-text rgba-white-light mx-4 py-3 mt-3">
-                				<strong>12</strong>
+                				<strong id="hours">12</strong>
               				</h1>
               				
 							<p class="font-weight-bold spacing pt-3">HOURS</p>
@@ -336,7 +344,7 @@
             			<div class="col-lg-4 col-md-4">
               				<hr class="white mx-5">
               				<h1 class="display-4 font-weight-bold white-text">
-                				<strong>35</strong>
+                				<strong id="minutes">35</strong>
               				</h1>
               				
 							<hr class="white mx-5">
@@ -624,7 +632,7 @@
 				<!--Grid column-->
 				<div class="col-md-2 mb-3">
 					<h6 class="text-uppercase font-weight-bold">
-						<a href="#!">Products</a>
+						<a href="#!">Gallery</a>
 					</h6>
 				</div>
 				<!--Grid column-->
@@ -632,7 +640,7 @@
 				<!--Grid column-->
 				<div class="col-md-2 mb-3">
 					<h6 class="text-uppercase font-weight-bold">
-						<a href="#!">Awards</a>
+						<a href="#!">Events</a>
 					</h6>
 				</div>
 				<!--Grid column-->
@@ -658,19 +666,16 @@
 			<hr class="rgba-white-light" style="margin: 0 15%;">
 
 			<!--Grid row-->
-			<div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+			<div class="row d-flex mb-md-0 mb-4">
 				<!--Grid column-->
 				<div class="col-md-8 col-12 mt-5">
-					<p style="line-height: 1.7rem">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-				doloremque laudantium, totam
-				rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-				explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-				consequuntur.</p>
+					<p style="line-height: 1.7rem">NITRutsav, the official cultural festival of NIT Rourkela, brings to you the golden ticket to travel back in time and relive the days of flamboyant hairdos and classy suspenders. ‘Cause, what could be better than giving the expression of the cultural diversity of NIT Rourkela, a retro twist?</p>
 				</div>
 				<!--Grid column-->
+    			<div class="col-md-4 col-12 mt-5">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3692.6715355197002!2d84.89779931490501!3d22.25253798534833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a201e7f9588b543%3A0xfe2e998eb3ad35f8!2sSAC+NIT+Rourkela!5e0!3m2!1sen!2sin!4v1545460363170" class="map-hover" width=auto height=auto frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
 			</div>
-			<!--Grid row-->
-
       		<hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
 
 			<!--Grid row-->
@@ -679,7 +684,7 @@
 				<div class="col-md-12">
 					<div class="footer-socials mb-5 flex-center">
 						<!--Facebook-->
-						<a class="p-2 m-2 fa-lg fb-ic">
+						<a class="p-2 m-2 fa-lg fb-ic" href="https://www.facebook.com/nitrutsav.nitrkl/">
 							<i class="fa fa-facebook fa-lg white-text mr-md-4"> </i>
 						</a>
 						<!--Twitter-->
@@ -712,7 +717,7 @@
 
 		<!--Copyright-->
 		<div class="footer-copyright py-3 text-center">
-		  	<div class="container-fluid">
+		  	<div class="">
 				© 2018 Copyright: <a href="https://nitrutsav.com/" target="_blank"> NITR Utsav </a>
 		  	</div>
 		</div>
@@ -756,5 +761,37 @@
 		script.type = 'text/javascript';
 		document.getElementsByTagName('body')[0].appendChild(script);
 	</script>
+	<script>
+$(document).ready(function() {
+//Preloader
+$(window).on("load", function() {
+preloaderFadeOutTime = 500;
+function hidePreloader() {
+var preloader = $('.spinner');
+preloader.fadeOut(preloaderFadeOutTime);
+}
+hidePreloader();
+});
+});
+</script>
+<script type="text/javascript">
+	var countDownDate = new Date("Feb 1, 2019 15:30:00").getTime();
+
+	var x = setInterval(function(){
+		var now = new Date().getTime();
+
+		var distance = countDownDate - now;
+
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+		
+		document.getElementById("days").innerHTML = days;
+		document.getElementById("hours").innerHTML = hours;
+		document.getElementById("minutes").innerHTML = minutes;
+
+	}, 1000);
+</script>
 </body>
 </html>
